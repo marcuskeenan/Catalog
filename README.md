@@ -36,7 +36,7 @@ Vagrant is the software that configures the VM and lets you share files between 
 
 **Windows Note:** The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
 
-# Get the VM Configuration
+# Get the Udacity fullstack-nanodegree-vm Configuration
 
 **Windows:** Use the Git Bash program (installed with Git) to get a Unix-style terminal.  
 **Other systems:** Use your favorite terminal program.
@@ -49,7 +49,7 @@ This will give you a directory named **catalog** complete with the source code f
 
 # Run the virtual machine!
 
-Using the terminal, change directory to Catalog (**cd Catalog**), then type **vagrant up** to launch your virtual machine.
+Using the terminal, change directory to Catalog (**cd catalog**), then type **vagrant up** to launch your virtual machine.
 
 
 # Running the Catalog App
@@ -58,10 +58,13 @@ Once it is up and running, type **vagrant ssh**. This will log your terminal int
 
 Now that you have Vagrant up and running type **vagrant ssh** to log into your VM.  change to the /vagrant directory by typing **cd /vagrant**. This will take you to the shared folder between your virtual machine and host machine.
 
-Type **ls** to ensure that you are inside the directory that contains application.py, database_setup.py, and two directories named 'templates' and 'static'
+Type **ls** to ensure that you are inside the catalog directory. Then clone this repo inside the catalog directory. This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
 
+# Set up the database
 Now type **python database_setup.py** to initialize the database.
 
-Type **python seeddatabase.py** to populate the database with categories and items. (Optional)
+# Add fake data to the database
+Type **python seedatabase.py** to populate the database with categories and items. (Optional)
 
-Type **python application.py** to run the Flask web server. In your browser visit **http://localhost:8000** to view the catalog app.  You should be able to view, add, edit, and delete catalog items and categories.
+# Run the application
+Type **python application.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. You should be able to view, add, edit, and delete catalog items and categories.
