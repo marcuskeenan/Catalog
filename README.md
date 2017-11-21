@@ -55,7 +55,12 @@ Once it is up and running, type **vagrant ssh**. This will log your terminal int
 
 Now that you have Vagrant up and running type **vagrant ssh** to log into your VM.  change to the /vagrant directory by typing **cd /vagrant**. This will take you to the shared folder between your virtual machine and host machine.
 
-Type **ls** to ensure that you are inside the catalog directory. Then clone this repo inside the catalog directory. This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
+Type **ls** to ensure that you are inside the catalog directory. 
+Then clone this repo inside the catalog directory. 
+```
+sdf
+```
+This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
 
 ## Set up the database
 Now type **python database_setup.py** to initialize the database.
