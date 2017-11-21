@@ -57,21 +57,12 @@ Remove the existing **catalog** folder by typing: ("catalog" will be replaced by
 ## Get the catalog app code
 While in the **/vagrant** directory clone this repo.
 ```
-  git clone
-```
-
-This will create a new folder inside the catalog directory called **Catalog**. (Note the capital "C")
-
-## Running the Catalog App
-Now that you have Vagrant up and running type **vagrant ssh** to log into your VM.  change to the /vagrant directory by typing **cd /vagrant**. This will take you to the shared folder between your virtual machine and host machine.
-
-Type **ls** to ensure that you are inside the catalog directory. 
-Then clone this repo inside the catalog directory. 
-From the terminal, run:
-```
   git clone https://github.com/marcuskeenan/Catalog.git
 ```
-This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
+This will create a new folder inside the catalog directory called **Catalog**.
+
+# Setup the application
+Change to the Catalog directory **cd Catalog** and **ls** and **ls** to make sure the directory contains **application.py**, **database_setup.py**, and **seed_database.py**.
 
 ## Set up the database
 Run:
