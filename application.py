@@ -39,6 +39,7 @@ def showLogin():
     return render_template('login.html', STATE=state)
 
 
+# Google login
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
     # Validate state token
@@ -183,7 +184,10 @@ def gdisconnect():
         return response
 
 
+########################################
 # JSON APIs to view Category Information
+########################################
+# Get items in a specific category
 @app.route('/category/<int:category_id>/item/JSON')
 def categoryItemJSON(category_id):
     category = session.query(Category).filter_by(id=category_id).one()
@@ -191,24 +195,30 @@ def categoryItemJSON(category_id):
     return jsonify(Items=[i.serialize for i in items])
 
 
+# Get a specific item
 @app.route('/category/<int:category_id>/item/<int:item_id>/JSON')
 def itemJSON(category_id, item_id):
     item = session.query(Item).filter_by(id=item_id).one()
     return jsonify(Item=item.serialize)
 
 
+# Get all categories
 @app.route('/category/JSON')
 def categoriesJSON():
     categories = session.query(Category).all()
     return jsonify(categories=[c.serialize for c in categories])
 
 
+# Get all items
 @app.route('/item/JSON')
 def itemsJSON():
     items = session.query(Item).all()
     return jsonify(items=[i.serialize for i in items])
 
 
+#######################################
+#  Main
+#######################################
 # Show all categories
 @app.route('/')
 @app.route('/category/')
@@ -218,8 +228,7 @@ def showCategories():
 
     if 'username' not in login_session:
         return render_template('publicCategories.html', categories=categories)
-    else:
-        return render_template('categories.html', categories=categories)
+    return render_template('categories.html', categories=categories)
 
 # Create a new category
 
@@ -241,7 +250,8 @@ def newCategory():
 # Edit a category
 
 
-@app.route('/category/<int:category_id>/edit/', methods=['GET', 'POST'])
+@app.route('/category/<int:category_id>/edit/',
+           methods=['GET', 'POST'])
 def editCategory(category_id):
     editedCategory = session.query(
         Category).filter_by(id=category_id).one()
@@ -301,6 +311,7 @@ def showItem(category_id):
             creator=creator)
 
 
+# Show specific item detail
 @app.route('/category/<int:category_id>/item/<int:item_id>/')
 def showItemDetail(category_id, item_id):
     category = session.query(Category).filter_by(id=category_id).one()
@@ -321,7 +332,7 @@ def showItemDetail(category_id, item_id):
             creator=creator)
 
 
-# Create a new item item
+# Create a new item
 @app.route('/category/<int:category_id>/item/new/', methods=['GET', 'POST'])
 def newItem(category_id):
     if 'username' not in login_session:
@@ -344,7 +355,7 @@ def newItem(category_id):
     else:
         return render_template('newItem.html', category_id=category_id)
 
-# Edit a item item
+# Edit a item
 
 
 @app.route(

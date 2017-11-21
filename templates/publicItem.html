@@ -1,80 +1,71 @@
-{% extends "main.html" %}
-{% block content %}
+{% extends "main.html" %} 
+{% block content %} 
 {% include "header.html" %}
-	
+
 <div class="row divider blue">
-		<div class="col-md-12"></div>
+	<div class="col-md-12"></div>
+</div>
+<div class="row banner main">
+	<div class="col-md-1"></div>
+	<div class="col-md-11 padding-none">
+		<h1 class="title">{{category.name}}
+			<figure class="creator">
+				<img src="{{ creator.picture}}">
+				<figcaption>{{ creator.name }}</figcaption>
+			</figure>
+		</h1>
 	</div>
-	<div class="row banner main">
-		<div class="col-md-1"></div>
-		<div class="col-md-11 padding-none">
-			<h1>{{category.name}}
-					<figure class="creator">
-						<img src="{{ creator.picture}}">
-						<figcaption>{{ creator.name }}</figcaption>
-					</figure>
-			</h1>
-		</div>
-	</div>
-	<div class="row padding-top padding-bottom">
-		<div class="col-md-1"></div>
-		<div class="col-md-11 padding-none">
-			
-		</div>
-		<div class="col-md-7"></div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			{% with messages = get_flashed_messages() %}
-				{% if messages %}
-					<ul>
-						{% for message in messages %}
-							 <li> <strong> {{ message }} </strong> </li>
-						{% endfor %}
-					</ul>
-				{% endif %}
-			{% endwith %}
-		</div>
-	</div>
-	{% if items !=[] %}	
+</div>
+<div class='flash'>
+	{% with messages = get_flashed_messages() %} 
+		{% if messages %}
+		<ul>
+			{% for message in messages %}
+			<li>
+				<strong> {{ message }} </strong>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	{% endwith %}
+</div>
+	{% if items !=[] %}
 	<div class="row">
 		<div class="col-md-0"></div>
 		<div class="col-md-6">
-			<h2>New</h2>
-				{% for i in items %}
-					{% if i.type == 'New' %}
-					<div class="item">
-						<h3>{{i.name}}</h3>
-						<div class="thumbnail">
-							<img class="img-responsive img-center item-img" src="{{ i.picture }}" alt="{{ i.name }}">
-						</div>
-						<p>{{i.description}}</p>
-						<p class="item-price">${{i.price}}</p>
-						<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
-					</div>	
-						
-					{% endif %}
-				{% endfor %}
+			{% for i in items %} 
+				{% if i.type == 'New' %}
+				<h2 class="text-center">New</h2>
+				<div class="item">
+					<h3>{{i.name}}</h3>
+					<div class="thumbnail">
+						<img class="img-responsive img-center item-img" src="{{ i.picture }}" alt="{{ i.name }}">
+					</div>
+					<p>{{i.description}}</p>
+					<p class="item-price">${{i.price}}</p>
+					<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
+				</div>
+				{% endif %} 
+			{% endfor %}
 		</div>
 		<div class="col-md-6">
-				<h2>Used</h2>
-					{% for i in items %}
-						{% if i.type == 'Used' %}
-						<div class="item">
-							<h3>{{i.name}}</h3>
-							<div class="thumbnail">
-								<img class="img-responsive img-center item-img" src="{{ i.picture }}" alt="{{ i.name }}">
-							</div>
-							<p>{{i.description}}</p>
-							<p class="item-price">${{i.price}}</p>
-							<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
-						</div>	
-							
-						{% endif %}
-					{% endfor %}
-			</div>
-		
+
+			{% for i in items %} 
+				{% if i.type == 'Used' %}
+				<h2 class="text-center">Used</h2>
+				<div class="item">
+					<h3>{{i.name}}</h3>
+					<div class="thumbnail">
+						<img class="img-responsive img-center item-img" src="{{ i.picture }}" alt="{{ i.name }}">
+					</div>
+					<p>{{i.description}}</p>
+					<p class="item-price">${{i.price}}</p>
+					<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
+				</div>
+				{% endif %}
+			{% endfor %}
+		</div>
 		<div class="col-md-1"></div>
 	</div>
-{% endif %}
+	{% endif %}
 {% endblock %}
