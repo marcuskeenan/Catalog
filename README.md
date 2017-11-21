@@ -64,18 +64,17 @@ From the terminal, run:
 This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
 
 ## Set up the database
-Now run:
+Run:
 ```
   python database_setup.py to initialize the database.
 ```
 This will create a sqlite database called catalog.db.
 
 ## Add fake data to the database
-Run:
+Run:(Optional)
 ```
 python seedatabase.py
 ```
-to populate the database with categories and items. (Optional)
 This will seed the database with some catalog categories and associated items.
 
 ## Run the application
@@ -83,4 +82,4 @@ Run:
 ```
 python application.py
 ```
-to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. After loggin in, you should be able to view, add, edit, and delete catalog items and categories.
+This will run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. After loggin in, you should be able to view, add, edit, and delete catalog items and categories.
