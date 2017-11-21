@@ -1,4 +1,5 @@
 #Catalog
+![](Catalog/static/CatalogDemo.gif)
 
 ##Getting Started
 
