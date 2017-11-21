@@ -38,28 +38,38 @@ Vagrant is the software that configures the VM and lets you share files between 
 **Windows:** Use the Git Bash program (installed with Git) to get a Unix-style terminal.  
 **Other systems:** Use your favorite terminal program.
 
-From the terminal, run:
 
-    git clone https://github.com/udacity/fullstack-nanodegree-vm.git
-
-This will give you a directory named **catalog** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools. 
 
 ## Run the virtual machine!
 
-Using the terminal, change directory to catalog (**cd catalog**), then type **vagrant up** to launch your virtual machine.
+Using the terminal, change directory to fullstack-nanodegree-vm/vagrant (**cd fullstack-nanodegree-vm/vagrant**), then type **vagrant up** to launch your virtual machine. (This could take a few minutes)
 
-
-## Running the Catalog App
+## SSH to the Vagrant VM
 Once it is up and running, type **vagrant ssh**. This will log your terminal into the virtual machine, and you'll get a Linux shell prompt. When you want to log out, type **exit** at the shell prompt.  To turn the virtual machine off (without deleting anything), type **vagrant halt**. If you do this, you'll need to run **vagrant up** again before you can log into it.
 
+Change to the Vagrant shared folder, type **cd /vagrant**.
+Type **ls** to see the contents of the directory. **catalog forum  tournament  Vagrantfile**
 
+Remove the existing **catalog** folder by typing: ("catalog" will be replaced by "Catalog" in the next step"
+```
+  rm -rf catalog
+```
+## Get the catalog app code
+While in the **/vagrant** directory clone this repo.
+```
+  git clone
+```
+
+This will create a new folder inside the catalog directory called **Catalog**. (Note the capital "C")
+
+## Running the Catalog App
 Now that you have Vagrant up and running type **vagrant ssh** to log into your VM.  change to the /vagrant directory by typing **cd /vagrant**. This will take you to the shared folder between your virtual machine and host machine.
 
 Type **ls** to ensure that you are inside the catalog directory. 
 Then clone this repo inside the catalog directory. 
 From the terminal, run:
 ```
-  https://github.com/marcuskeenan/Catalog.git
+  git clone https://github.com/marcuskeenan/Catalog.git
 ```
 This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
 
