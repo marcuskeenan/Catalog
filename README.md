@@ -1,5 +1,5 @@
 #Catalog
-![](Catalog/static/CatalogDemo.gif?raw=true "Title")
+![Demo](static/CatalogDemo.gif?raw=true "Title")
 
 ##Getting Started
 
