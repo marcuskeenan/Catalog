@@ -8,19 +8,19 @@
 This project was created as part of my coursework for the Udacity [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004). The project is a basic catalog application that provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users have the ability to post, edit and delete their own items.
 
 ## Features
-1. CRUD functionality using Flask and sqlite
+1. CRUD functionality using a Flask webserver and sqlite database
 2. RESTful JSON endpoints
 3. Third-party OAuth authentication with google
 
 ## Prerequisites
-1. Python installed[python](https://www.python.org/downloads/)
-2. 
-
-
+1. [Python](https://www.python.org/downloads/) installed
+2. VirtualBox
+3. Vagrant
+4. Git
 
 
 ## Getting Started
-Before
+
 
 
 
