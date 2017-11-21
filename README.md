@@ -57,18 +57,30 @@ Now that you have Vagrant up and running type **vagrant ssh** to log into your V
 
 Type **ls** to ensure that you are inside the catalog directory. 
 Then clone this repo inside the catalog directory. 
+From the terminal, run:
 ```
-sdf
+  https://github.com/marcuskeenan/Catalog.git
 ```
 This will create a new folder called **Catalog** inside the **catalog** directory. (**cd Catalog**) and **ls** to make sure the directory contains application.py, database_setup.py, and seed_database.py.
 
 ## Set up the database
-Now type **python database_setup.py** to initialize the database.
+Now run:
+```
+  python database_setup.py to initialize the database.
+```
 This will create a sqlite database called catalog.db.
 
 ## Add fake data to the database
-Type **python seedatabase.py** to populate the database with categories and items. (Optional)
+Run:
+```
+python seedatabase.py
+```
+to populate the database with categories and items. (Optional)
 This will seed the database with some catalog categories and associated items.
 
 ## Run the application
-Type **python application.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. After loggin in, you should be able to view, add, edit, and delete catalog items and categories.
+Run:
+```
+python application.py
+```
+to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. After loggin in, you should be able to view, add, edit, and delete catalog items and categories.
