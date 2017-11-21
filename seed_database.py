@@ -75,3 +75,4 @@ for category in categories:
         session.commit()
 
 print "Database seeding complete!"
+
