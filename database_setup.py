@@ -60,3 +60,5 @@ class Item(Base):
 # create database and add tables and columns
 engine = create_engine('sqlite:///catalog.db')
 Base.metadata.create_all(engine)
+
+print "Database setup complete!"
