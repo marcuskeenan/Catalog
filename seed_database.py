@@ -11,7 +11,6 @@ session = DBSession()
 
 categories = [
 
-
     ['Tubas',
         [{'name': 'Meinl Weston 6450 Baer Handmade Series 5-Valve  CC Tuba',
           'description': 'The Meinl Weston 6450/2 Baer Handmade Series 5-Valve 6/4 CC Tuba was developed together with Alan Baer, tubist with the New York Philharmonic Orchestra.',  # noqa
@@ -48,7 +47,6 @@ categories = [
           }
          ]
      ]
-
 ]
 
 
