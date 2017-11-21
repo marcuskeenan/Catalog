@@ -54,7 +54,7 @@ class Item(Base):
             'description': self.description,
             'picture': self.picture,
             'price': self.price,
-            'type': self.type }
+            'type': self.type}
 
 
 # create database and add tables and columns

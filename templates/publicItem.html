@@ -50,6 +50,7 @@
 						</div>
 						<p>{{i.description}}</p>
 						<p class="item-price">${{i.price}}</p>
+						<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
 					</div>	
 						
 					{% endif %}
@@ -66,6 +67,7 @@
 							</div>
 							<p>{{i.description}}</p>
 							<p class="item-price">${{i.price}}</p>
+							<a href='{{url_for('showItemDetail', category_id = category.id, item_id=i.id ) }}'>View</a>
 						</div>	
 							
 						{% endif %}

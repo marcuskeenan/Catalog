@@ -1,22 +1,18 @@
 {% extends "main.html" %}
 {% block content %}
-	<div class="row top-item">
-		<div class="col-md-10"></div>
-		<div class="col-md-2 text-right">
-			<a href="{{url_for('showLogin')}}">Click Here to Log in </a>
-		</div>
-	</div>
+{% include "header.html" %}
+
 	<div class="row divider blue">
 		<div class="col-md-12"></div>
 	</div>
 	<div class="row banner main">
 		<div class="col-md-1"></div>
 		<div class="col-md-11 padding-none">
-			<h1>Categories</h1>
+			<h1 class="title">Categories</h1>
 		</div>
 	</div>
 
-	<div class = 'flash'>
+<div class = 'flash'>
 		      {% with messages = get_flashed_messages() %}
       {% if messages %}
           
@@ -29,25 +25,34 @@
     {% endwith %}
 
 </div>
-
-
 	
 	<div class="row padding-top padding-bottom">
 		<div class="col-md-1"></div>
 		<div class="col-md-10 padding-none">
-			
+			<a href="{{url_for('newCategory')}}">
+				<button class="btn btn-default" id="new-category">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Login to add your own category!
+				</button>
+			</a>
 		</div>
 		<div class="col-md-1"></div>
 	</div>
+
 	{% for category in categories %}
 		<a href = "{{url_for('showItem', category_id = category.id)}}">
 			<div class="row">
 				<div class="col-md-1"></div>
 					<div class="col-md-10 category-list">
-						<h3>{{category.name}}</h3>
+							<h3>{{category.name}}
+									<figure class="creatorsm">
+										<img src="{{ category.user.picture}}">
+										<figcaption>{{ category.user.name }}</figcaption>
+									</figure>
+							</h3>
 					</div>
 				<div class="col-md-1"></div>
 			</div>
 		</a>
 	{% endfor %}
 {% endblock %}
+{% include "footer.html" %}
