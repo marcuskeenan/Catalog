@@ -1,7 +1,9 @@
 <p align="center">
-  <h1>Catalog App</h1>
+  <h1>A Catalog App built with Python and Flask</h1>
   <img src="static/CatalogDemo.gif" width="460"/>
 </p>
+
+
 ### Description
 
 ### Features
