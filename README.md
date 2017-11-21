@@ -78,6 +78,15 @@ python seedatabase.py
 ```
 This will seed the database with some catalog categories and associated items.
 
+## Configure the app
+Type:
+```
+  sudo chmod +x ./pg_config.sh
+```
+Run:
+```
+  sudo ./pg_config.sh
+```
 ## Run the application
 Run:
 ```
