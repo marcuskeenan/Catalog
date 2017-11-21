@@ -4,21 +4,28 @@
 </p>
 
 
-### Description
+## Description
 This project was created as part of my coursework for the Udacity [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004). The project is a basic catalog application that provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users have the ability to post, edit and delete their own items.
 
-### Features
+## Features
 1. CRUD functionality using Flask and sqlite
 2. RESTful JSON endpoints
 3. Third-party OAuth authentication with google
 
+## Prerequisites
+1. Python installed[python](https://www.python.org/downloads/)
+2. 
 
-#### Getting Started
+
+
+
+### Getting Started
+Before
 
 
 
 
-### VirtualBox
+## VirtualBox
 
 VirtualBox is the software that actually runs the VM. [You can download it from virtualbox.org, here.](https://www.virtualbox.org/wiki/Downloads)  Install the *platform package* for your operating system.  You do not need the extension pack or the SDK. You do not need to launch VirtualBox after installing it.
 
