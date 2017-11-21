@@ -9,11 +9,11 @@ This project was created as part of my coursework for the Udacity [Full Stack We
 
 ### Features
 1. CRUD functionality using Flask and sqlite
-2. RESTful
+2. RESTful JSON endpoints
 3. Third-party OAuth authentication with google
 
 
-### Getting Started
+#### Getting Started
 
 
 
