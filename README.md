@@ -1,5 +1,5 @@
 #Catalog
-![](https://raw.githubusercontent.com/marcusekeenan/Catalog/master/Catalog/static/CatalogDemo.gif)
+![](Catalog/static/CatalogDemo.gif?raw=true "Title")
 
 ##Getting Started
 
