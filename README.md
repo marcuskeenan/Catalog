@@ -1,12 +1,17 @@
 <p align="center">
-  <h1>A Catalog App built with Python and Flask</h1>
+  <h1>A basic catalog app built with Python and Flask</h1>
   <img src="static/CatalogDemo.gif" width="460"/>
 </p>
 
 
 ### Description
+This project was created as part of my coursework for the Udacity [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004). The project is a basic catalog application that provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users have the ability to post, edit and delete their own items.
 
 ### Features
+1. CRUD functionality using Flask and sqlite
+2. RESTful
+3. Third-party OAuth authentication with google
+
 
 ### Getting Started
 
