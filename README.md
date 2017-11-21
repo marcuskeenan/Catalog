@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>A basic catalog app built with Python and Flask</h1>
+  <h1>A catalog app created with Python and Flask</h1>
   <img src="static/CatalogDemo.gif" width="460"/>
 </p>
 
@@ -8,9 +8,9 @@
 This project was created as part of my coursework for the Udacity [Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004). The project is a basic catalog application that provides a list of items within a variety of categories as well as a user registration and authentication system. Registered users have the ability to post, edit and delete their own categories and items.
 
 ## Features
-1. CRUD functionality using a Flask webserver and sqlite database
+1. CRUD functionality using a Flask webserver and sqlite database with sqlalchemy
 2. RESTful JSON endpoints
-3. Third-party OAuth authentication with google
+3. Third-party OAuth 2.0 authentication using google sign in
 
 ## Prerequisites
 1. [Python](https://www.python.org/downloads/) installed
@@ -59,9 +59,11 @@ Type **ls** to ensure that you are inside the catalog directory. Then clone this
 
 ## Set up the database
 Now type **python database_setup.py** to initialize the database.
+This will create a sqlite database called catalog.db.
 
 ## Add fake data to the database
 Type **python seedatabase.py** to populate the database with categories and items. (Optional)
+This will seed the database with some catalog categories and associated items.
 
 ## Run the application
-Type **python application.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. You should be able to view, add, edit, and delete catalog items and categories.
+Type **python application.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the catalog app. After loggin in, you should be able to view, add, edit, and delete catalog items and categories.
