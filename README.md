@@ -33,12 +33,15 @@ Vagrant is the software that configures the VM and lets you share files between 
 
 **Windows Note:** The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
 
-## Get the Udacity fullstack-nanodegree-vm Configuration
+## Get the Udacity fullstack-nanodegree-vm VM
 
 **Windows:** Use the Git Bash program (installed with Git) to get a Unix-style terminal.  
 **Other systems:** Use your favorite terminal program.
 
-
+Run:
+```
+  git clone https://github.com/udacity/fullstack-nanodegree-vm.git
+```
 
 ## Run the virtual machine!
 
@@ -55,7 +58,7 @@ Remove the existing **catalog** folder by typing: ("catalog" will be replaced by
   rm -rf catalog
 ```
 ## Get the catalog app code
-While in the **/vagrant** directory clone this repo.
+While in the **/vagrant** directory clone this repo, Type:
 ```
   git clone https://github.com/marcuskeenan/Catalog.git
 ```
