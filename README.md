@@ -46,7 +46,7 @@ This will give you a directory named **catalog** complete with the source code f
 
 ## Run the virtual machine!
 
-Using the terminal, change directory to Catalog (**cd catalog**), then type **vagrant up** to launch your virtual machine.
+Using the terminal, change directory to catalog (**cd catalog**), then type **vagrant up** to launch your virtual machine.
 
 
 ## Running the Catalog App
