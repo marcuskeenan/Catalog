@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+				<h1>Edit</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2>{{item.name}}</h2>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6 col-md-offset-0 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name}}">
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="1000" rows="6" name="description">{{item.description}}</textarea>
+
+					<label for="price">Price:</label>
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+						<input type ="text" maxlength="10" class="form-control" name="price" value="{{item.price}}">
+					</div>
+					<label for="type">Type:</label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="type" id="type1" value="New" {% if item.type == 'New'%}checked{%endif%}>New
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="type" id="type2" value="Used" {% if item.type == 'Used'%}checked{%endif%}>Used
+					  </label>
+					</div>
+					<div class="form-group">
+							<label for="picture">Picture URL:</label>
+							<input type ="url" class="form-control" id="picture" maxlength="250" name="picture" placeholder="{{item.picture}}">
+					</div>
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+					<a href = '{{url_for('showCategories')}}'>
+						<button class="btn btn-default delete">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6 padding-top">
+			<div>
+				<img class="img-responsive center-block item-img" src="{{ item.picture }}" alt="{{ item.name }}">
+			</div>
+		</div>
+	</div>
+{% endblock %}
