@@ -449,6 +449,7 @@ def deleteItem(category_id, item_id):
         return render_template('deleteItem.html', item=itemToDelete)
 
 
+
 # Disconnect based on provider
 
 @app.route('/disconnect')
