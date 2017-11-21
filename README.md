@@ -1,5 +1,5 @@
 #Catalog
-![](Catalog/static/CatalogDemo.gif)
+![](https://raw.githubusercontent.com/marcusekeenan/Catalog/master/Catalog/static/CatalogDemo.gif)
 
 ##Getting Started
 
