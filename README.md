@@ -1,5 +1,10 @@
 #Catalog
-![Demo](static/CatalogDemo.gif?raw=true "Title")
+
+
+<p align="center">
+  <img src="your_relative_path_here" width="350"/>
+  <img src="static/CatalogDemo.gif" width="350"/>
+</p>
 
 ##Getting Started
 
