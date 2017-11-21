@@ -2,11 +2,11 @@
   <h1>Catalog App</h1>
   <img src="static/CatalogDemo.gif" width="460"/>
 </p>
-###Description
+### Description
 
-###Features
+### Features
 
-###Getting Started
+### Getting Started
 
 
 
