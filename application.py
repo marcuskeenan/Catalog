@@ -20,22 +20,31 @@ import requests
 from werkzeug.utils import secure_filename
 from login_decorator import login_required
 
-
+#################################################
+#  Flask
+#################################################
 app = Flask(__name__)
 
+#################################################
+#  Client ID
+#################################################
 CLIENT_ID = json.loads(
     open('client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Category Item Application"
 
-
+#################################################
+#  Database
+#################################################
 # Connect to Database and create database session
 engine = create_engine('sqlite:///catalog.db')
 Base.metadata.bind = engine
-
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 
+#################################################
+#  Authentication
+#################################################
 # Create anti-forgery state token
 @app.route('/login')
 def showLogin():
@@ -227,16 +236,14 @@ def itemsJSON():
     return jsonify(items=[i.serialize for i in items])
 
 
-#######################################
-#  Main
-#######################################
+#################################################
+#  Routing
+#################################################
 # Show all categories
 @app.route('/')
 @app.route('/category/')
 def showCategories():
     categories = session.query(Category).order_by(asc(Category.name))
-    #  items = session.query(Item).order_by(desc(Item.date)).limit(5)
-
     if 'username' not in login_session:
         return render_template('publicCategories.html', categories=categories)
     return render_template('categories.html', categories=categories)
@@ -246,8 +253,6 @@ def showCategories():
 @login_required
 @app.route('/category/new/', methods=['GET', 'POST'])
 def newCategory():
-    if 'username' not in login_session:
-        return redirect('/login')
     if request.method == 'POST':
         newCategory = Category(
             name=request.form['name'], user_id=login_session['user_id'])
