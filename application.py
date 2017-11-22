@@ -1,4 +1,10 @@
-from flask import Flask, render_template, request, redirect, jsonify, url_for, flash  # noqa
+from flask import (Flask, 
+                   render_template, 
+                   request, 
+                   redirect, 
+                   jsonify, 
+                   url_for, 
+                   flash)
 from sqlalchemy import create_engine, asc, func
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Category, Item, User
@@ -12,6 +18,7 @@ import json
 from flask import make_response
 import requests
 from werkzeug.utils import secure_filename
+from login_decorator import login_required
 
 
 app = Flask(__name__)
@@ -236,7 +243,7 @@ def showCategories():
 
 # Create a new category
 
-
+@login_required
 @app.route('/category/new/', methods=['GET', 'POST'])
 def newCategory():
     if 'username' not in login_session:
@@ -253,14 +260,12 @@ def newCategory():
 
 # Edit a category
 
-
+@login_required
 @app.route('/category/<int:category_id>/edit/',
            methods=['GET', 'POST'])
 def editCategory(category_id):
     editedCategory = session.query(
         Category).filter_by(id=category_id).one()
-    if 'username' not in login_session:
-        return redirect('/login')
     if editedCategory.user_id != login_session['user_id']:
         return """
                 <script>function myFunction()
@@ -278,13 +283,11 @@ def editCategory(category_id):
 
 
 # Delete a category
-
+@login_required
 @app.route('/category/<int:category_id>/delete/', methods=['GET', 'POST'])
 def deleteCategory(category_id):
     categoryToDelete = session.query(
         Category).filter_by(id=category_id).one()
-    if 'username' not in login_session:
-        return redirect('/login')
     if categoryToDelete.user_id != login_session['user_id']:
         return """
                 <script>function myFunction()
@@ -349,11 +352,9 @@ def showItemDetail(category_id, item_id):
 
 
 # Create a new item
-
+@login_required
 @app.route('/category/<int:category_id>/item/new/', methods=['GET', 'POST'])
 def newItem(category_id):
-    if 'username' not in login_session:
-        return redirect('/login')
     category = session.query(Category).filter_by(id=category_id).one()
     if login_session['user_id'] != category.user_id:
         return """
@@ -381,15 +382,13 @@ def newItem(category_id):
 
 # Edit a item
 
-
+@login_required
 @app.route(
     '/category/<int:category_id>/item/<int:item_id>/edit',
     methods=[
         'GET',
         'POST'])
 def editItem(category_id, item_id):
-    if 'username' not in login_session:
-        return redirect('/login')
     editedItem = session.query(Item).filter_by(id=item_id).one()
     category = session.query(Category).filter_by(id=category_id).one()
     if login_session['user_id'] != category.user_id:
@@ -424,12 +423,10 @@ def editItem(category_id, item_id):
 
 
 # Delete a item
-
+@login_required
 @app.route('/category/<int:category_id>/item/<int:item_id>/delete',
            methods=['GET', 'POST'])
 def deleteItem(category_id, item_id):
-    if 'username' not in login_session:
-        return redirect('/login')
     category = session.query(Category).filter_by(id=category_id).one()
     itemToDelete = session.query(Item).filter_by(id=item_id).one()
     if login_session['user_id'] != category.user_id:
