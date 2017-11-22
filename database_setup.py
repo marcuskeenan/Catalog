@@ -23,6 +23,7 @@ class Category(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     user = relationship(User)
     items = relationship('Item', cascade='all, delete-orphan')
+
     @property
     def serialize(self):
         """Return object data in easily serializeable format"""
@@ -60,4 +61,3 @@ class Item(Base):
 # create database and add tables and columns
 engine = create_engine('sqlite:///catalog.db')
 Base.metadata.create_all(engine)
-
