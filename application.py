@@ -250,8 +250,9 @@ def showCategories():
 
 # Create a new category
 
-@login_required
+
 @app.route('/category/new/', methods=['GET', 'POST'])
+@login_required
 def newCategory():
     if request.method == 'POST':
         newCategory = Category(
@@ -265,9 +266,10 @@ def newCategory():
 
 # Edit a category
 
-@login_required
+
 @app.route('/category/<int:category_id>/edit/',
            methods=['GET', 'POST'])
+@login_required
 def editCategory(category_id):
     editedCategory = session.query(
         Category).filter_by(id=category_id).one()
@@ -288,8 +290,9 @@ def editCategory(category_id):
 
 
 # Delete a category
-@login_required
+
 @app.route('/category/<int:category_id>/delete/', methods=['GET', 'POST'])
+@login_required
 def deleteCategory(category_id):
     categoryToDelete = session.query(
         Category).filter_by(id=category_id).one()
@@ -337,6 +340,7 @@ def showItem(category_id):
 # Show specific item detail
 
 @app.route('/category/<int:category_id>/item/<int:item_id>/')
+@login_required
 def showItemDetail(category_id, item_id):
     category = session.query(Category).filter_by(id=category_id).one()
     creator = getUserInfo(category.user_id)
@@ -357,8 +361,9 @@ def showItemDetail(category_id, item_id):
 
 
 # Create a new item
-@login_required
+
 @app.route('/category/<int:category_id>/item/new/', methods=['GET', 'POST'])
+@login_required
 def newItem(category_id):
     category = session.query(Category).filter_by(id=category_id).one()
     if login_session['user_id'] != category.user_id:
@@ -387,12 +392,13 @@ def newItem(category_id):
 
 # Edit a item
 
-@login_required
+
 @app.route(
     '/category/<int:category_id>/item/<int:item_id>/edit',
     methods=[
         'GET',
         'POST'])
+@login_required
 def editItem(category_id, item_id):
     editedItem = session.query(Item).filter_by(id=item_id).one()
     category = session.query(Category).filter_by(id=category_id).one()
@@ -428,9 +434,10 @@ def editItem(category_id, item_id):
 
 
 # Delete a item
-@login_required
+
 @app.route('/category/<int:category_id>/item/<int:item_id>/delete',
            methods=['GET', 'POST'])
+@login_required
 def deleteItem(category_id, item_id):
     category = session.query(Category).filter_by(id=category_id).one()
     itemToDelete = session.query(Item).filter_by(id=item_id).one()
