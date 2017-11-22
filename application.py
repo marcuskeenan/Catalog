@@ -1,9 +1,9 @@
-from flask import (Flask, 
-                   render_template, 
-                   request, 
-                   redirect, 
-                   jsonify, 
-                   url_for, 
+from flask import (Flask,
+                   render_template,
+                   request,
+                   redirect,
+                   jsonify,
+                   url_for,
                    flash)
 from sqlalchemy import create_engine, asc, func
 from sqlalchemy.orm import sessionmaker
@@ -290,7 +290,6 @@ def editCategory(category_id):
 
 
 # Delete a category
-
 @app.route('/category/<int:category_id>/delete/', methods=['GET', 'POST'])
 @login_required
 def deleteCategory(category_id):
@@ -338,7 +337,6 @@ def showItem(category_id):
 
 
 # Show specific item detail
-
 @app.route('/category/<int:category_id>/item/<int:item_id>/')
 @login_required
 def showItemDetail(category_id, item_id):
@@ -361,7 +359,6 @@ def showItemDetail(category_id, item_id):
 
 
 # Create a new item
-
 @app.route('/category/<int:category_id>/item/new/', methods=['GET', 'POST'])
 @login_required
 def newItem(category_id):
@@ -434,7 +431,6 @@ def editItem(category_id, item_id):
 
 
 # Delete a item
-
 @app.route('/category/<int:category_id>/item/<int:item_id>/delete',
            methods=['GET', 'POST'])
 @login_required
@@ -458,9 +454,7 @@ def deleteItem(category_id, item_id):
         return render_template('deleteItem.html', item=itemToDelete)
 
 
-
 # Disconnect based on provider
-
 @app.route('/disconnect')
 def disconnect():
     if 'provider' in login_session:
@@ -482,4 +476,3 @@ if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.debug = True
     app.run(host='0.0.0.0', port=5000)
-
