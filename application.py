@@ -296,7 +296,9 @@ def editCategory(category_id):
 def deleteCategory(category_id):
     categoryToDelete = session.query(
         Category).filter_by(id=category_id).one()
-    if categoryToDelete.user_id != login_session['user_id']:
+    if 'username 'not in login_session:
+        return redirect('/login')
+    else:
         return """
                 <script>function myFunction()
                 {alert('You are not authorized to delete this category.
