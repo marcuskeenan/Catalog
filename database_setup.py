@@ -22,7 +22,7 @@ class Category(Base):
     name = Column(String(250), nullable=False, unique=True)
     user_id = Column(Integer, ForeignKey('users.id'))
     user = relationship(User)
-
+    items = relationship('Item', cascade='all delete-orphan')
     @property
     def serialize(self):
         """Return object data in easily serializeable format"""
